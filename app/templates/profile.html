@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.username }}'s Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="profile-container">
+        <header class="profile-header text-center">
+            <img src="{{ url_for('static', filename='images/' + user.profile_pic) }}" alt="Profile Picture" class="profile-pic">
+            <h1>{{ user.username }}</h1>
+            <p class="bio">{{ user.bio }}</p>
+        </header>
+
+        <section class="profile-stats text-center">
+            <div>
+                <h3>{{ user.posts | length }}</h3>
+                <p>Posts</p>
+            </div>
+            <div>
+                <h3>{{ user.followers | length }}</h3>
+                <p>Followers</p>
+            </div>
+            <div>
+                <h3>{{ user.following | length }}</h3>
+                <p>Following</p>
+            </div>
+        </section>
+
+        <section class="profile-posts">
+            <h2>{{ user.username }}'s Posts</h2>
+            {% if posts %}
+                <ul>
+                    {% for post in posts %}
+                        <li class="post-item">
+                            <p>{{ post.content }}</p>
+                            <small>{{ post.timestamp }}</small>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No posts to show.</p>
+            {% endif %}
+        </section>
+    </div>
+</body>
+</html>

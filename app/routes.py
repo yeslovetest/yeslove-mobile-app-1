@@ -113,8 +113,6 @@ def signup_professional():
     return render_template('signup_professional.html')
 
 
-
-
 # --- User Routes ---
 
 @main.route('/profile/<int:user_id>', methods=['GET'])
