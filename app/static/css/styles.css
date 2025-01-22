@@ -38,3 +38,22 @@ body.community-page {
 body.community-page h1 {
     color: #28a745;
 }
+/* Login Page */
+body.login-page {
+    background-color: #f2f9ff; /* Light blue */
+}
+
+body.login-page h1 {
+    color: #007bff;
+}
+
+/* Sign-Up Pages */
+body.signup-professional-page,
+body.signup-standard-page {
+    background-color: #fff5e6; /* Light orange */
+}
+
+body.signup-professional-page h1,
+body.signup-standard-page h1 {
+    color: #ff6600;
+}

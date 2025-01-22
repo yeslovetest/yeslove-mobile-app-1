@@ -27,6 +27,7 @@
                 <li class="nav-item"><a class="nav-link" href="/groups">Groups</a></li>
                 <li class="nav-item"><a class="nav-link" href="/events">Events</a></li>
                 <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -37,6 +38,19 @@
         {% endblock %}
     </div>
 
+    <div class="container mt-3">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    
     <!-- Footer -->
     <footer class="text-center mt-4 py-3">
         <p>&copy; 2025 YesLove. All rights reserved.</p>
