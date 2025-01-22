@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login - YesLove
+{% endblock %}
+
+{% block body_class %}
+login-page
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Login</h1>
+    <p>Please enter your credentials to log in.</p>
+    <form action="/login" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+    <p class="mt-4">
+        Don't have an account? 
+        <a href="/signup-standard">Sign up as a Standard User</a> or 
+        <a href="/signup-professional">Sign up as a Professional</a>.
+    </p>
+</div>
+{% endblock %}
