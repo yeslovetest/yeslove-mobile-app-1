@@ -1,0 +1,59 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 10px 0;
+}
+
+/* Home Page */
+body.home-page {
+    background-color: #f2f9ff; /* Light blue */
+    color: #333;
+}
+
+body.home-page h1 {
+    color: #007bff;
+}
+
+/* About Page */
+body.about-page {
+    background-color: #fff9f0; /* Light orange */
+    color: #5a3d31;
+}
+
+body.about-page h1 {
+    color: #ff6f00;
+}
+
+/* Community Page */
+body.community-page {
+    background-color: #eafaf1; /* Light green */
+    color: #2c5f2d;
+}
+
+body.community-page h1 {
+    color: #28a745;
+}
+/* Login Page */
+body.login-page {
+    background-color: #f2f9ff; /* Light blue */
+}
+
+body.login-page h1 {
+    color: #007bff;
+}
+
+/* Sign-Up Pages */
+body.signup-professional-page,
+body.signup-standard-page {
+    background-color: #fff5e6; /* Light orange */
+}
+
+body.signup-professional-page h1,
+body.signup-standard-page h1 {
+    color: #ff6600;
+}
