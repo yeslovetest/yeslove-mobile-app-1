@@ -1,32 +1,99 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - YesLove</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        /* Full Page Centering */
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-{% block title %}
-Login - YesLove
-{% endblock %}
+        /* Login Container */
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
 
-{% block body_class %}
-login-page
-{% endblock %}
+        /* Login Heading */
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2575fc;
+        }
 
-{% block content %}
-<div class="text-center">
-    <h1>Login</h1>
-    <p>Please enter your credentials to log in.</p>
-    <form action="/login" method="post" class="mt-4">
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" required>
+        /* Form Group Styling */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            width: 100%;
+            background-color: #007bff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Links Section */
+        .signup-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-links a {
+            color: #2575fc;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .signup-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="{{ url_for('main.login') }}" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <!-- Sign-Up Links -->
+        <div class="signup-links">
+            <p>Don't have an account?</p>
+            <a href="{{ url_for('main.signup', type='standard') }}">Sign-Up as Standard User</a> |
+            <a href="{{ url_for('main.signup', type='professional') }}">Sign-Up as Professional User</a>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </form>
-    <p class="mt-4">
-        Don't have an account? 
-        <a href="/signup-standard">Sign up as a Standard User</a> or 
-        <a href="/signup-professional">Sign up as a Professional</a>.
-    </p>
-</div>
-{% endblock %}
+    </div>
+</body>
+</html>

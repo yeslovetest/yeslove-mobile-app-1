@@ -4,17 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Feed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Your Feed</h1>
-    <a href="{{ url_for('main.logout') }}">Logout</a>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <strong>{{ post.author.username }}</strong>: {{ post.content }}
-                <small>{{ post.timestamp }}</small>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Your Feed</h1>
+        <a href="{{ url_for('main.logout') }}" class="btn btn-danger">Logout</a>
+
+        <div class="feed">
+            {% if posts %}
+                {% for post in posts %}
+                    <div class="post-card">
+                        <!-- Post Header -->
+                        <div class="post-header">
+                            <img src="{{ url_for('static', filename='images/' + post.author.profile_pic) }}" alt="Profile Picture" class="profile-pic">
+                            <div>
+                                <strong>{{ post.author.username }}</strong>
+                                <small>{{ post.timestamp.strftime('%b %d, %Y %H:%M') }}</small>
+                            </div>
+                        </div>
+
+                        <!-- Post Content -->
+                        <div class="post-content">
+                            <p>{{ post.content }}</p>
+                            {% if post.image %}
+                                <img src="{{ url_for('static', filename='uploads/' + post.image) }}" alt="Post Image" class="post-image">
+                            {% endif %}
+                        </div>
+
+                        <!-- Post Footer -->
+                        <div class="post-footer">
+                            <button class="btn btn-light">Like ({{ post.likes | length }})</button>
+                            <button class="btn btn-light">Comment ({{ post.comments | length }})</button>
+                        </div>
+
+                        <!-- Comments -->
+                        <div class="post-comments">
+                            {% for comment in post.comments %}
+                                <div class="comment">
+                                    <strong>{{ comment.user_id }}</strong>
+                                    <p>{{ comment.content }}</p>
+                                    <small>{{ comment.timestamp.strftime('%b %d, %Y %H:%M') }}</small>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No posts to show. Start following users or create your first post!</p>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
