@@ -1,18 +1,250 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* General background for the app */
+    color: #333; /* Default text color */
 }
 
-footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #e9ecef;
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    font-family: Arial, sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+/* Feed Page */
+.feed {
+    margin-top: 20px;
+}
+
+.post-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.post-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header strong {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.post-header small {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.post-content {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.post-content p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.post-footer button {
+    background: none;
+    color: #007bff;
+    font-size: 0.9em;
+    padding: 5px;
+    transition: color 0.2s ease;
+}
+
+.post-footer button:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Comments Section */
+.post-comments {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.comment p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.comment strong {
+    font-size: 1em;
+    color: #007bff;
+}
+
+.comment small {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Profile Page */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.profile-pic-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.bio {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.profile-stats div {
+    text-align: center;
+}
+
+.profile-stats h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.profile-posts {
+    margin-top: 20px;
+}
+
+.profile-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-posts .post-item {
+    border-bottom: 1px solid #ddd;
     padding: 10px 0;
+}
+
+.profile-posts .post-item p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .post-card {
+        padding: 10px;
+    }
+
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .post-footer button {
+        font-size: 0.8em;
+    }
+
+    .profile-pic-large {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 /* Home Page */
 body.home-page {
     background-color: #f2f9ff; /* Light blue */
-    color: #333;
 }
 
 body.home-page h1 {
@@ -38,6 +270,7 @@ body.community-page {
 body.community-page h1 {
     color: #28a745;
 }
+
 /* Login Page */
 body.login-page {
     background-color: #f2f9ff; /* Light blue */

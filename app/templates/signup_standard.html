@@ -4,27 +4,24 @@
 Sign Up - Standard User
 {% endblock %}
 
-{% block body_class %}
-signup-standard-page
-{% endblock %}
-
 {% block content %}
-<div class="text-center">
+<div class="container">
     <h1>Sign Up as a Standard User</h1>
-    <form action="{{ url_for('main.signup_standard') }}" method="post" class="mt-4">
+    <form action="{{ url_for('main.signup') }}" method="post">
+        <input type="hidden" name="is_professional" value="false">
         <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your full username" required>
+            <label for="username">Full Name</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your full name" required>
         </div>
         <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" required>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
         </div>
-        <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
     </form>
 </div>
 {% endblock %}
