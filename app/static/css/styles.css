@@ -57,3 +57,53 @@ body.signup-professional-page h1,
 body.signup-standard-page h1 {
     color: #ff6600;
 }
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.profile-header {
+    margin-top: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.bio {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.profile-stats div {
+    text-align: center;
+}
+
+.profile-posts {
+    margin-top: 20px;
+}
+
+.profile-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-posts .post-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.profile-posts .post-item p {
+    margin: 0;
+    font-size: 1.1em;
+}
