@@ -37,7 +37,7 @@ const App = () => {
     return (
         <div>
             <h1>Yeslove Frontend</h1>
-            <p>Check the console for Flask API response.</p>
+            <p>Check the console for Flask API response one.</p>
         </div>
     );
 };
